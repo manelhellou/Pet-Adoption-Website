@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+            <tr> 
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content">
+                    <div id="image_welcome">
+                        <img id="home_image" src="/images/home1.png" alt="man and dog">
+                        <p id="welcome_message" class="home_text">Welcome to FurEver Homes - Your Pet Adoption & Care Community!</p>
+                    </div>
+                    <br>
+                    <p class="home_text">Discover your next furry family member or offer a loving home to a pet in need. Our platform connects passionate pet lovers like you with adorable cats and dogs awaiting their forever homes. </p>
+                    <p class="home_text">Explore insightful tips and guidance on dog and cat care from experienced professionals and fellow enthusiasts.</p>
+                    <p class="home_text">Whether you're looking to adopt, share, or simply learn more about responsible pet ownership, you've come to the right place. Join us in making a difference in the lives of pets and their humans today!</p>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

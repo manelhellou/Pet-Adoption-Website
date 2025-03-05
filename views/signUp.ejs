@@ -1,0 +1,88 @@
+<%- include("partials/header.ejs") %>
+<script>
+    
+    //---------------------- VALIDATE USER'S INFORMATION -----------------------------
+    function validateUsername(){
+        let username = document.getElementById("username").value;
+            if(/\w+/.test(username)){
+                return true;
+            }
+            else{
+                return false;
+            }
+    }
+    function validatePassword(){
+        let password = document.getElementById("password").value;
+            if(password.length >= 4){
+                if(/\d+[a-zA-z]+/.test(password) || /[a-zA-z]+\d+/.test(password)){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
+    }
+    
+    function validateUserInfo(){
+        let goodUsername = validateUsername();
+        let goodPassword = validatePassword();
+        let alreadyTaken = false;
+
+        if(document.getElementById("username").value.trim() === ""|| document.getElementById("password").value.trim() === ""){
+            let message = document.getElementById("signUpFail")
+            message.innerHTML = "Please fill out all fields.";
+            message.style.backgroundColor= "rgb(232, 2, 2, 0.338)";
+            message.style.color= "rgb(232, 2, 2)";
+            return false;
+        }
+        else if(goodUsername && goodPassword){
+                return true;
+        }
+        else{
+            let message = document.getElementById("signUpFail")
+            message.innerHTML = "Please respect username and password format.";
+            message.style.backgroundColor= "rgb(232, 2, 2, 0.338)";
+            message.style.color= "rgb(232, 2, 2)";
+            return false;
+        }
+    }
+    </script>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content" id="signup_content">
+                        <div id="signUpFail"></div>
+                        <%if(redBox){%>
+                        <div id="redBox"><%=message%></div>
+                        <%}%>
+                        <fieldset id="signUpField">
+                            <form action="/signUp" name="signUpForm" method="post" onsubmit="return validateUserInfo()">
+                                <span class="material-symbols-outlined" id="signup_icon">account_circle</span>
+                                    <p id="signUp">Sign Up</p>
+                                    <p id="signUpMessage">Just a few quick things to get started!</p>
+                                        <input id="username" class="signUpCases" name="username" type="text" placeholder="Username">
+                                        <p class="signUpInfo">*Usernames can contain letters and digits only</p>
+                                        <input id="password" class="signUpCases" name="password" type="password" placeholder="Password">
+                                        <p class="signUpInfo">*Passwords must be at least 4 characters (letters/digits) long, and have at least one letter and one digit</p>
+                                        <input type = "submit" value = "Create account" id="submit">
+                            </form>
+                        </fieldset>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

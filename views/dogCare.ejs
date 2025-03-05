@@ -1,0 +1,72 @@
+<%- include("partials/header.ejs") %>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content" id="dog_content">
+                    <p class="anton-regular title">General Dog Care</p>
+
+                    <p class="subtitle">Feeding</p>
+                    <ul>
+                        <li>Puppies eight to 12 weeks old need four meals a day.</li>
+                        <li>Feed puppies three to six months old three meals a day.</li>
+                        <li>Feed puppies six months to one year two meals a day.</li>
+                        <li>When your dog reaches his first birthday, one meal a day is usually enough.</li>
+                        <li>For some dogs, including larger canines or those prone to bloat, it's better to feed two smaller meals.</li>
+                    </ul>
+                    <p>Premium-quality dry food provides a well-balanced diet for adult dogs and may be mixed with water, broth or canned food. Your dog may enjoy cottage cheese, cooked egg or fruits and vegetables, but these additions should not total more than ten percent of his daily food intake.</p>
+                    <p>Puppies should be fed a high-quality, brand-name puppy food (large breed puppy foods for large breeds). Please limit "people food," however, because it can result in vitamin and mineral imbalances, bone and teeth problems and may cause very picky eating habits and obesity. Clean, fresh water should be available at all times, and be sure to wash food and water dishes frequently.</p>
+                    
+                    <p class="subtitle">Exercise</p>
+                    <p>Dogs need exercise to burn calories, stimulate their minds, and stay healthy. Individual exercise needs vary based on breed or breed mix, sex, age and level of health. Exercise also tends to help dogs avoid boredom, which can lead to destructive behaviors. Supervised fun and games will satisfy many of your pet's instinctual urges to dig, herd, chew, retrieve and chase.</p>
+                
+                    <p class="subtitle">Grooming</p>
+                    <p>Help keep your dog clean and reduce shedding with frequent brushing. Check for fleas and ticks daily during warm weather. Most dogs don't need to be bathed more than a few times a year. Before bathing, comb or cut out all mats from the coat. Carefully rinse all soap out of the coat, or the dirt will stick to soap residue. Please visit our Dog Grooming Tips page for more information.</p>
+                    
+                    <p class="subtitle">Handling</p>
+                    <p>To carry a puppy or small dog, place one hand under the dog's chest, with either your forearm or other hand supporting the hind legs and rump. Never attempt to lift or grab your puppy or small dog by the forelegs, tail or back of the neck. If you do have to lift a large dog, lift from the underside, supporting his chest with one arm and his rear end with the other.</p>
+                
+                    <p class="subtitle">Housing</p>
+                    <p>Your pet needs a warm, quiet place to rest, away from all drafts and off the floor. A training crate or dog bed is ideal, with a clean blanket or pillow placed inside. Wash the dog's bedding often. If your dog will be spending a lot of time outdoors, be sure she has access to shade and plenty of cool water in hot weather, and a warm, dry, covered shelter when it's cold.</p>
+                
+                    <p class="subtitle">Licensing and Identification</p>
+                    <p>Follow your community’s licensing regulations. Be sure to attach the license to your dog’s collar. This, along with an ID tag and implanted microchip or tattoo, can help secure your dog’s return should she become lost.</p>
+                
+                    <p class="subtitle">Fleas and Ticks</p>
+                    <p>Daily inspections of your dog for fleas and ticks during the warm seasons are important. Use a flea comb to find and remove fleas. There are several new methods of flea and tick control. Speak to your veterinarian about these and other options. Visit our Fleas and Ticks page for more information.</p>
+               
+                    <p class="subtitle">Medicines and Poisons</p>
+                    <p>Never give your dog medication that has not been prescribed by a veterinarian. If you suspect that your animal has ingested a poisonous substance, call your veterinarian or the ASPCA Animal Poison Control Center for 24-hour animal poison information at (888) 426- 4435.</p>
+               
+                    <p class="subtitle">Spaying and Neutering</p>
+                    <p>Female dogs should be spayed and male dogs neutered by six months of age.</p>
+
+                    <p class="subtitle">Dog Supply Checklist</p>
+                    <ul>
+                        <li>Premium-quality dog food and treats</li>
+                        <li>Food dish</li>
+                        <li>Water bowl</li>
+                        <li>Toys, toys and more toys, including safe chew toys</li>
+                        <li>Brush & comb for grooming, including flea comb</li>
+                        <li>Collar with license and ID tag</li>
+                        <li>Leash</li>
+                        <li>Carrier (for smaller dogs)</li>
+                        <li>Training crate</li>
+                        <li>Dog bed or box with warm blanket or towel</li>
+                        <li>Dog toothbrush</li>
+                    </ul>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

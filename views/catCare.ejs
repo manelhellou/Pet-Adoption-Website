@@ -1,0 +1,74 @@
+<%- include("partials/header.ejs") %>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content" id="cat_content">
+                    <p class="anton-regular title">General Cat Care</p>
+
+                    <p class="subtitle">Feeding</p>
+                    <p>We recommend purchasing high-quality, brand-name kitten or cat food. Your veterinarian will be able to assess your new cat or kitten and determine the best diet. Factors such as age, activity level and health make a difference in what and how much a cat should eat.</p>
+                    <ul id="cat_list">
+                        <li>Cats require taurine, an essential amino acid, for heart and eye health. The food you choose should be balanced for the life stage of your cat or kitten. Properly balanced foods will contain taurine.</li>
+                        <li>You will need to provide fresh, clean water at all times, and wash and refill your cat’s water bowls daily.</li>
+                        <li>Treats should be no more than 5-10% of the diet.</li>
+                        <li>Many people feed baby food to a cat or kitten who is refusing food or not feeling well  Please read labels carefully: If the baby food contains onion or garlic powder, your pet could be poisoned.</li>
+                        <li>Take your pet to your veterinarian if signs of anorexia, diarrhea, vomiting or lethargy continue for more than two days.</li>
+                    </ul>
+                    
+                    <p class="subtitle">Grooming</p>
+                    <p>Most cats stay relatively clean and rarely need a bath, but you should brush or comb your cat regularly. Frequent brushing helps keep your cat's coat clean, reduces the amount of shedding and cuts down on the incidence of hairballs. </p>
+                    
+                    <p class="subtitle">Handling</p>
+                    <p>To pick up your cat, place one hand behind the front legs and another under the hindquarters. Lift gently. Never pick up a cat by the scruff of the neck or by the front legs.</p>
+                
+                    <p class="subtitle">Housing</p>
+                    <p>Your pet should have her own clean, dry place in your home to sleep and rest. Line your cat's bed with a soft, warm blanket or towel. Be sure to wash the bedding often. Please keep your cat indoors. Outdoor cats do not live as long as indoor cats. Outdoor cats are at risk of trauma from cars, or from fights with other cats, raccoons and free-roaming dogs. Coyotes are known to eat cats. Outdoor cats are more likely to become infested with fleas or ticks, as well as contract infectious diseases.</p>
+                
+                    <p class="subtitle">Identification</p>
+                    <p>If allowed outdoors, your cat must wear a safety collar and an ID tag. A safety collar with an elastic panel will allow your cat to break loose if the collar gets caught on something. And for both indoor and outdoor cats, an ID tag or an implanted microchip can help ensure that your cat is returned if he or she becomes lost.</p>
+                
+                    <p class="subtitle">Litter Box</p>
+                    <p>All indoor cats need a litter box, which should be placed in a quiet, accessible location. In a multi-level home, one box per floor is recommended. Avoid moving the box unless absolutely necessary, but if you must do so, move the box just a few inches per day. Keep in mind that cats won't use a messy, smelly litter box, so scoop solid wastes out of the box at least once a day. Dump everything, wash with a mild detergent and refill at least once a week; you can do this less frequently if using clumping litter. Don't use ammonia, deodorants or scents, especially lemon, when cleaning the litter box. If your cat will not use a litterbox, please consult with your veterinarian. Sometimes refusal to use a litter box is based on a medical condition that required treatment. </p>
+               
+                    <p class="subtitle">Scratching</p>
+                    <p>Cats need to scratch! When a cat scratches, the old outer nail sheath is pulled off and the sharp, smooth claws underneath are exposed. Cutting your cat’s nails every two to three weeks will keep them relatively blunt and less likely to harm the arms of both humans and furniture. Provide your cat with a sturdy scratching post, at least three feet high. The post should also be stable enough that it won't wobble during use, and should be covered with rough material such as sisal, burlap or tree bark. Many cats also like scratching pads.</p>
+               
+                    <p class="subtitle">Health</p>
+                    <p>Your cat should see the veterinarian at least once a year for an examination and annual shots, and immediately if she is sick or injured.</p>
+
+                    <p>Medicines and Poisons</p>
+                    <p>Never give your cat medication that has not been prescribed by a veterinarian. If you suspect that your animal has ingested a poisonous substance, call your veterinarian or the ASPCA Animal Poison Control Center for 24-hour animal poison information at (888) 426-4435.</p>
+
+                    <p>Spaying and Neutering</p>
+                    <p>Female cats should be spayed and male cats neutered by five months of age.</p>
+
+                    <p class="subtitle">Cat Supply Checklist</p>
+                    <ul>
+                        <li>Premium-brand cat food</li>
+                        <li>Food dish</li>
+                        <li>Water bowl</li>
+                        <li>Interactive toys</li>
+                        <li>Brush</li>
+                        <li>Comb</li>
+                        <li>Safety cat collar with ID tag</li>
+                        <li>Scratching post or scratching pad</li>
+                        <li>Litter box and litter</li>
+                        <li>Cat carrier</li>
+                        <li>Cat bed or box with warm blanket or towel</li>
+                    </ul>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

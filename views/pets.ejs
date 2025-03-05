@@ -1,0 +1,206 @@
+<%- include("partials/header.ejs") %>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/pets"><div>Browse Available Pets</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+
+                <td class="content">
+
+                    <div class="horizontalLine topLine"></div>
+                    <div id="catsHeader">
+                        <div id="catsSubtitle">
+                            <img src="/images/catIcon.png" alt="Cat Icon">
+                            <h2>BROWSE CATS</h2>
+                        </div>
+                    </div>
+                    <div class="horizontalLine bottomLine"></div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="./images/pet1.jpg" alt="Ragdoll cat">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Ragdoll</h3>
+                            <p>Age: 2 years</p>
+                            <p>Gender: Male</p>
+                            <p>Gets along with: Other cats, Small children</p>
+                            <p>Extra information: Playful and loves cuddles</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet2.jpeg" alt="Bengal cat">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Bengal</h3>
+                            <p>Age: 1.5 years</p>
+                            <p>Gender: Female</p>
+                            <p>Gets along with: Other cats</p>
+                            <p>Extra information: Enjoys exploring and chasing toys</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet3.jpeg" alt="Siamese cat">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Siamese</h3>
+                            <p>Age: 3 years</p>
+                            <p>Gender: Male</p>
+                            <p>Gets along with: Other cats</p>
+                            <p>Extra information: Vocal and sociable</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet4.webp" alt="Main Coon cat">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Main Coon</h3>
+                            <p>Age: 4 years</p>
+                            <p>Gender: Female</p>
+                            <p>Gets along with: Other cats, Small children</p>
+                            <p>Extra information: Gentle giant with a friendly demeanor</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+
+                    <%for(var i = 0; i<petInfo.length; i++){%>
+                        <%if(petInfo[i][2] == "cat"){%>
+                            <div class="pets">
+                                <div class="imageContainer">
+                                    <img class="petImage" src="./images/comingSoon.png" alt="Image coming soon">
+                                </div>
+                                <div class="textContainer">
+                                    <h3>Breed: <%=petInfo[i][3]%></h3>
+                                    <p>Age: <%=petInfo[i][4]%></p>
+                                    <p>Gender: <%=petInfo[i][5]%></p>
+                                    <p>Gets along with: <%=petInfo[i][6]%></p>
+                                    <p>Extra information: <%=petInfo[i][7]%></p>
+                                </div>
+                                <button class="interestedButton">Interested</button>
+                            </div>
+                        <%}%>
+                    <%}%>
+
+            
+                    <div class="horizontalLine topLine"></div>
+                    <div id="dogsHeader">
+                        <div id="dogsSubtitle">
+                            <img src="/images/dogIcon.png" alt="Dog icon">
+                            <h2>BROWSE DOGS</h2>
+                        </div>
+                    </div>
+                    <div class="horizontalLine bottomLine"></div>
+           
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet5.jpeg" alt="Golden retriever dog">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Golden Retriever</h3>
+                            <p>Age: 4 years</p>
+                            <p>Gender: Female</p>
+                            <p>Gets along with: Other dogs, Small children</p>
+                            <p>Extra Information: Well-trained and friendly</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet6.avif" alt="Poodle dog">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Poodle</h3>
+                            <p>Age: 3 years</p>
+                            <p>Gender: Male</p>
+                            <p>Gets along with: Other dogs</p>
+                            <p>Extra Information: Affectionate and loves attention</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet7.jpeg" alt="Beagle dog">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Beagle</h3>
+                            <p>Age: 5 years</p>
+                            <p>Gender: Female</p>
+                            <p>Gets along with: Other dogs, Small children</p>
+                            <p>Extra Information: Energetic and playful</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet8.webp" alt="Rottweiler dog">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: Rottweiler</h3>
+                            <p>Age: 6 years</p>
+                            <p>Gender: Male</p>
+                            <p>Gets along with: Other dogs</p>
+                            <p>Extra Information: Protective yet affectionate.</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="/images/pet9.webp" alt="German Shepherd dog">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: German Shepherd</h3>
+                            <p>Age: 2 years</p>
+                            <p>Gender: Female</p>
+                            <p>Gets along with: Other dogs</p>
+                            <p>Extra Information: Intelligent and loyal</p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+
+                    <%for(var i = 0; i<petInfo.length; i++){%>
+                        <%if(petInfo[i][2] == "dog"){%>
+                            <div class="pets">
+                                <div class="imageContainer">
+                                    <img class="petImage" src="./images/comingSoon.png" alt="Image coming soon">
+                                </div>
+                                <div class="textContainer">
+                                    <h3>Breed: <%=petInfo[i][3]%></h3>
+                                    <p>Age: <%=petInfo[i][4]%></p>
+                                    <p>Gender: <%=petInfo[i][5]%></p>
+                                    <p>Gets along with: <%=petInfo[i][6]%></p>
+                                    <p>Extra information: <%=petInfo[i][7]%></p>
+                                </div>
+                                <button class="interestedButton">Interested</button>
+                            </div>
+                        <%}%>
+                    <%}%>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

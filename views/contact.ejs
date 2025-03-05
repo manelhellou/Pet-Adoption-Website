@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content" id="information_content">
+                    <span id="information_icon" class="material-symbols-outlined">
+                    contact_mail
+                    </span>
+                    <p class="anton-regular">Information</p>
+                    <p>Name: Manel Hellou</p>
+                    <p>Student ID: 40284245</p>
+                    <p>Email: m_hellou@live.concordia.ca</p>         
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

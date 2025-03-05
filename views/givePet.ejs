@@ -1,0 +1,138 @@
+<%- include("partials/header.ejs") %>
+        <tr>
+            <td class="menu">
+                <ul style="list-style-type: none;">
+                    <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                    <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                    <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                    <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                    <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                    <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                    <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                    <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                    <%if(alreadyLoggedIn){%>
+                        <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                    <%}%>
+                </ul> 
+            </td>
+                <td class="content">
+                        <%if(!isFilled){%>
+                            <div class="fillOutMessage"><%= message %></div>
+                        <%}%>
+                        <form action="/givePet" name="petForm" onsubmit="return validatePetForm()" method="post">
+                            <fieldset>
+                                <legend id="form_title" class="anton-regular">PET TO GIVE AWAY</legend>
+                            <br>
+
+                            <p>Animal:
+                                <label> 
+                                    <input type = "radio" name="animal" value="cat" <%= formData && formData.animal === 'cat' ? 'checked' : '' %>>
+                                    Cat
+                                </label>
+                                <label> 
+                                    <input type = "radio" name="animal" value="dog" <%= formData && formData.animal === 'dog' ? 'checked' : '' %>>
+                                    Dog
+                                </label> 
+                            </p>
+
+                            <br>
+
+                            <p>
+                                Breed of cat/dog
+                                <select name = "breed" class="selectMenu">
+                                  <option selected disabled hidden>--Select an option</option>
+                                  <option disabled> --Cat-- </option>
+                                  <option value="Domestic Shorthair" <%= formData && formData.breed === 'Domestic Shorthair' ? 'selected' : '' %>> Domestic Shorthair </option>
+                                  <option value="American Shorthair" <%= formData && formData.breed === 'American Shorthair' ? 'selected' : '' %>> American Shorthair </option>
+                                  <option value="Domestic Longhair" <%= formData && formData.breed === 'Domestic Longhair' ? 'selected' : '' %>> Domestic Longhair </option>
+                                  <option value="Ragdoll" <%= formData && formData.breed === 'Ragdoll' ? 'selected' : '' %>> Ragdoll </option>
+                                  <option value="Siamese" <%= formData && formData.breed === 'Siamese' ? 'selected' : '' %>> Siamese </option>
+                                  <option value="Bengal" <%= formData && formData.breed === 'Bengal' ? 'selected' : '' %>> Bengal </option>
+                                  <option value="Main Coon" <%= formData && formData.breed === 'Main Coon' ? 'selected' : '' %>> Main Coon </option>
+                                  <option value="British Shorthair" <%= formData && formData.breed === 'British Shorthair' ? 'selected' : '' %>> British Shorthair </option>
+                                  <option value="Persian" <%= formData && formData.breed === 'Persian' ? 'selected' : '' %>> Persian </option>
+                                  <option disabled> --Dog-- </option>
+                                  <option value="Labrador Retriever" <%= formData && formData.breed === 'Labrador Retriever' ? 'selected' : '' %>> Retriever (Labrador) </option>
+                                  <option value="Golden Retriever" <%= formData && formData.breed === 'Golden Retriever' ? 'selected' : '' %>> Retriever (Golden) </option>
+                                  <option value="French Bulldog" <%= formData && formData.breed === 'French Bulldog' ? 'selected' : '' %>> French Bulldog </option>
+                                  <option value="German Shepherd" <%= formData && formData.breed === 'German Shepherd' ? 'selected' : '' %>> German Shepherd </option>
+                                  <option value="Poodle" <%= formData && formData.breed === 'Poodle' ? 'selected' : '' %>> Poodle </option>
+                                  <option value="Rottweiler" <%= formData && formData.breed === 'Rottweiler' ? 'selected' : '' %>> Rottweiler </option>
+                                  <option value="Beagle" <%= formData && formData.breed === 'Beagle' ? 'selected' : '' %>> Beagle </option>
+                                  <option value="Daschund" <%= formData && formData.breed === 'Daschund' ? 'selected' : '' %>> Daschund </option>
+                                  <option value="Pembroke Welsh Corgi" <%= formData && formData.breed === 'Pembroke Welsh Corgi' ? 'selected' : '' %>> Pembroke Welsh Corgi </option>
+                                </select>
+                            </p>
+
+                            <br>
+
+                            <p>
+                                Age of animal
+                                <select name = "age" class="selectMenu">
+                                    <option selected disabled hidden>--Select an option</option>
+                                    <option value="Kitten/puppy (0-12 months)" <%= formData && formData.age === 'kitten_puppy' ? 'selected' : '' %>> Kitten/puppy: 0-12 months</option>
+                                    <option value="Junior (1-2 years)" <%= formData && formData.age === 'junior' ? 'selected' : '' %>> Junior: 1-2 years </option>
+                                    <option value="Adult (3-6 years)" <%= formData && formData.age === 'adult' ? 'selected' : '' %>> Adult: 3-6 years </option>
+                                    <option value="Mature (7-10 years)" <%= formData && formData.age === 'mature' ? 'selected' : '' %>> Mature: 7-10 years </option>
+                                    <option value="Senior (11 years and older)" <%= formData && formData.age === 'senior' ? 'selected' : '' %>> Senior: 11 years and older </option>
+                                  </select>
+                            </p>
+
+                            <br>
+
+                            <p>Animal gender:
+                                <label> 
+                                    <input type = "radio"  name = "gender" value="Male" <%= formData && formData.gender === 'male' ? 'checked' : '' %>>
+                                    Male
+                                </label>
+                                <label> 
+                                    <input type = "radio"  name = "gender" value="Female" <%= formData && formData.gender === 'female' ? 'checked' : '' %>>
+                                    Female
+                                </label> 
+                            </p>
+
+                            <br>
+
+                            <p>Gets along with:
+                                <label> 
+                                    <input type = "radio"  name = "gettingAlong" value="Other dogs" <%= formData && formData.gettingAlong === 'otherDogs' ? 'checked' : '' %>>
+                                    Other dogs
+                                </label>
+                                <label> 
+                                    <input type = "radio"  name = "gettingAlong" value="Other cats" <%= formData && formData.gettingAlong === 'otherCats' ? 'checked' : '' %>>
+                                    Other cats
+                                </label> 
+                                <label> 
+                                    <input type = "radio"  name = "gettingAlong" value="Small children" <%= formData && formData.gettingAlong === 'smallChildren' ? 'checked' : '' %>>
+                                    Small children
+                                </label> 
+                            </p>
+
+                            <br>
+
+                            <p> Anything you want to tell us about your animal?
+                                <textarea class="textArea" name="extraInfo" rows = "5" cols = "40"> <%= formData && formData.extraInfo ? formData.extraInfo : '' %></textarea>
+                            </p>
+
+                            <br>
+
+                            <p>Current owner's full name:
+                                <input class="textLine" name="name" type="text" placeholder="Full Name" value="<%= formData && formData.name ? formData.name : '' %>">
+                            </p>
+
+                            <br>
+
+                            <p>Current owner's email:
+                                <input class="textLine" name="email" type="text" placeholder="Email" value="<%= formData && formData.email ? formData.email : '' %>"> 
+                            </p> 
+
+                            <br>
+
+                        </fieldset>
+
+                            <input type = "submit" value = "Submit Form" id="submit">
+                            <input type = "reset" value = "Reset Form" id = "reset">
+                        </form>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

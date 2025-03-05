@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul>  
+                </td>
+                <td class="content">
+                    <span id="privacy_icon" class="material-symbols-outlined">
+                    security
+                    </span>
+                    <p>Dear users,</p>
+                    <p>Your privacy matters to us.We want to assure you that your information is held in the strictest confidence and will never be sold, shared, or misused in any way.</p>
+                    <p>Furthermore, while our platform welcomes users to share information about their beloved pets, we want to emphasize that any content posted by users is their sole responsibility. We do not endorse or verify the accuracy of user-generated content, and users are expected to adhere to our community guidelines, which prohibit the dissemination of false or misleading information.</p>
+                    <p>Thank you for choosing FurEver Homes. We appreciate your trust in us and remain dedicated to providing you with a secure and enjoyable online experience.</p>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

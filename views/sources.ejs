@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+            <tr>
+                <td class="menu">
+                    <ul style="list-style-type: none;">
+                        <li class="menu_item"><a href="/"><div>Home</div></a></li>
+                        <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+                        <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+                        <li class="menu_item"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+                        <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+                        <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+                        <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+                        <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+                        <%if(alreadyLoggedIn){%>
+                            <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+                        <%}%>
+                    </ul> 
+                </td>
+                <td class="content">
+                    <p class="anton-regular title">Sources</p>
+                    <p><span class="source_item">Name of adoption service:</span> Fur-Ever Homes Rescue <a class="source_links" href="https://www.fur-everhomesrescue.com">https://www.fur-everhomesrescue.com</a></p>
+                    <p><span class="source_item">Home image:</span> Bezrukova, Anna. “Smiling young man with dog, pet..” HouseDigest, <a class="source_links" href="https://www.vecteezy.com/vector-art/8084727-smiling-young-man-with-dog-pet-love-and-friendship-with-animals-vet-clinic-vector-illustration-in-cartoon-style">https://www.vecteezy.com/vector-art/8084727-smiling-young-man-with-dog-pet-love-and-friendship-with-animals-vet-clinic-vector-illustration-in-cartoon-style</a>. 10 February 2024.</p>
+                    <p><span class="source_item">Logo image:</span> Garasigrafis. “Loki & Milo Veterinary.” Dribbble, <a class="source_links" href="https://dribbble.com/shots/22729996-Loki-Milo-Veterinary#">https://dribbble.com/shots/22729996-Loki-Milo-Veterinary#</a>. 10 February 2024.</p>
+                    <p><span class="source_item">Dog Care text:</span> “General Dog Care.” ASPCA, <a class="source_links" href="https://www.aspca.org/pet-care/dog-care/general-dog-care">https://www.aspca.org/pet-care/dog-care/general-dog-care</a>. 10 February 2024.</p>
+                    <p><span class="source_item">Cat Care text:</span> “General Cat Care.” ASPCA, <a class="source_links" href="https://www.aspca.org/pet-care/cat-care/general-cat-care">https://www.aspca.org/pet-care/cat-care/general-cat-care</a>. 10 February 2024.</p>
+                    <p><span class="source_item">Bengal cat image:</span> “BENGAL CATS: FACTS & HISTORY BEHIND THE BREED.” RAWZ, <a class="source_links" href="https://rawznaturalpetfood.com/bengal-cat/">https://rawznaturalpetfood.com/bengal-cat/</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Ragdoll cat image:</span> “About Ragdoll Cats.” ModernCat, <a class="source_links" href="https://moderncat.com/articles/breeds/ragdoll/">https://moderncat.com/articles/breeds/ragdoll/</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Siamese cat image:</span> “Siamese.” Daily Paws, <a class="source_links" href="https://www.dailypaws.com/cats-kittens/cat-breeds/siamese">https://www.dailypaws.com/cats-kittens/cat-breeds/siamese</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Main Coon cat image:</span> “TOP 5 REASONS MAINE COON CATS ARE AWESOME.” West Park, <a class="source_links" href="https://www.westparkanimalhospital.com/blog/maine-coon-cats/">https://www.westparkanimalhospital.com/blog/maine-coon-cats/</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Golden retriever dog image:</span> “A Guide to Puppy Breeds: Golden Retrievers!” The Puppy Academy, <a class="source_links" href="https://www.thepuppyacademy.com/blog/2022/1/24/a-guide-to-puppy-breeds-golden-retrievers">https://www.thepuppyacademy.com/blog/2022/1/24/a-guide-to-puppy-breeds-golden-retrievers</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Poodle dog image:</span> “Toy Poodle.” PetMD, <a class="source_links" href="https://www.petmd.com/dog/breeds/toy-poodle">https://www.petmd.com/dog/breeds/toy-poodle</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Beagle dog image:</span> “Beagle.” Zoo Plus Magazine, <a class="source_links" href="https://www.zooplus.be/magazine/chien/races-de-chien/beagle">https://www.zooplus.be/magazine/chien/races-de-chien/beagle</a>. 31 March 2024.</p>
+                    <p><span class="source_item">German Shepherd dog image:</span> “Awesome facts about German Shepherds.” Pettsie, <a class="source_links" href="https://www.pettsie.com/blogs/blog/awesome-facts-about-german-shepherds">https://www.pettsie.com/blogs/blog/awesome-facts-about-german-shepherds</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Cat icon:</span> “Cat free icon.” Flaticon, <a class="source_links" href="https://www.flaticon.com/free-icon/cat_2938229">https://www.flaticon.com/free-icon/cat_2938229</a>. 31 March 2024.</p>
+                    <p><span class="source_item">Dog icon:</span> “Dog free icon.” Flaticon, <a class="source_links" href="https://www.flaticon.com/free-icon/dog_616720">https://www.flaticon.com/free-icon/dog_616720</a>. 31 March 2024.</p>
+                </td>
+            </tr>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,88 @@
+<%- include("partials/header.ejs") %>
+<tr>
+    <td class="menu">
+        <ul style="list-style-type: none;">
+            <li class="menu_item"><a href="/"><div>Home</div></a></li>
+            <li class="menu_item"><a href="/signUp"><div>Create an account</div></a></li>
+            <li class="menu_item"><a href="/login"><div>Log In</div></a></li>
+            <li class="menu_item" style="background-color: #f5971b; color: white; border-radius: 10px;"><a href="/findPet"><div>Find a dog/cat</div></a></li>
+            <li class="menu_item"><a href="/dogCare"><div>Dog care</div></a></li>
+            <li class="menu_item"><a href="/catCare"><div>Cat care</div></a></li>
+            <li class="menu_item"><a href="/givePet"><div>Have a pet to give away</div></a></li>
+            <li class="menu_item"><a href="/contact"><div>Contact us</div></a></li>
+            <%if(alreadyLoggedIn){%>
+                <li class="menu_item" style="background-color: rgb(232, 2, 2, 0.338); color: white; border-radius: 10px;"><a href="/logout"><div>Log Out</div></a></li>
+            <%}%>
+        </ul> 
+    </td>
+    <td class="content">
+        <div id="browse">
+        <%if(numPets == 0){%>
+            <div id="noPetsMessage">
+                <h1>Currently, there are no pets available for adoption. </h1>
+                <p>We eagerly await new additions from generous donors.</p>
+            </div>
+        <% } else { %>
+        <div class="horizontalLine topLine"></div>
+        <div id="catsHeader">
+            <div id="catsSubtitle">
+                <img src="/images/catIcon.png" alt="Cat Icon">
+                <h2>BROWSE CATS</h2>
+            </div>
+        </div>
+        <div class="horizontalLine bottomLine"></div>
+        <%if(numCats == 0){%>
+            <p class="noMessage">No available cats respect your criteria..</p>
+        <%}else{%>
+            <%for(var i = 0; i<rightPets.length; i++){%>
+                <%if(rightPets[i][2] == "cat"){%>
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="./images/comingSoon.png" alt="Image coming soon">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: <%=rightPets[i][3]%></h3>
+                            <p>Age: <%=rightPets[i][4]%></p>
+                            <p>Gender: <%=rightPets[i][5]%></p>
+                            <p>Gets along with: <%=rightPets[i][6]%></p>
+                            <p>Extra information: <%=rightPets[i][7]%></p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+                <%}%>
+            <%}%>
+        <%}%>
+        <div class="horizontalLine topLine"></div>
+        <div id="dogsHeader">
+            <div id="dogsSubtitle">
+                <img src="/images/dogIcon.png" alt="Dog icon">
+                <h2>BROWSE DOGS</h2>
+            </div>
+        </div>
+        <div class="horizontalLine bottomLine"></div>
+        <%if(numDogs == 0){%>
+            <p class="noMessage">No available dogs respect your criteria..</p>
+        <%}else{%>
+            <%for(var i = 0; i<rightPets.length; i++){%>
+                <%if(rightPets[i][2] == "dog"){%>
+                    <div class="pets">
+                        <div class="imageContainer">
+                            <img class="petImage" src="./images/comingSoon.png" alt="Image coming soon">
+                        </div>
+                        <div class="textContainer">
+                            <h3>Breed: <%=rightPets[i][3]%></h3>
+                            <p>Age: <%=rightPets[i][4]%></p>
+                            <p>Gender: <%=rightPets[i][5]%></p>
+                            <p>Gets along with: <%=rightPets[i][6]%></p>
+                            <p>Extra information: <%=rightPets[i][7]%></p>
+                        </div>
+                        <button class="interestedButton">Interested</button>
+                    </div>
+                <%}%>
+            <%}%>
+        <%}%>
+        <%}%> 
+    </div>
+    </td>
+</tr>
+<%- include("partials/footer.ejs") %>

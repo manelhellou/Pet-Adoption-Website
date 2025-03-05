@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FurEver Homes - Cat Care</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Protest+Riot&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="/style.css">
+        <script>
+            function dateAndTime(){
+  var date = new Date();
+
+  //DAY
+  var day = date.getDate();
+  if(day < 10){
+      day = '0' + day
+  }
+  //MONTH
+  var month = date.getMonth() + 1;
+  if(month < 10){
+      month = '0' + month
+  }
+  //YEAR
+  var year = date.getFullYear();
+  //HOUR
+  var hour = date.getHours();
+  if(hour < 10){
+      hour = '0' + hour
+  }
+  //MINUTE
+  var minute =  date.getMinutes();
+  if(minute < 10){
+      minute = '0' + minute
+  }
+  //SECOND
+  var second = date.getSeconds();
+  if(second < 10){
+      second = '0' + second
+  }
+  //FORMAT
+  var formattedDate = `${day}/${month}/${year}`
+  var formattedTime = `${hour}:${minute}:${second}`
+
+  return {formattedDate, formattedTime};
+}
+function updateDateAndTime() {
+            let currentDateElement = document.getElementById("currentDate");
+            let currentTimeElement = document.getElementById("currentTime");
+            
+            const { formattedDate, formattedTime } = dateAndTime();
+            currentDateElement.innerHTML = formattedDate;
+            currentTimeElement.innerHTML = formattedTime;
+        }
+        setInterval(updateDateAndTime, 1000);
+        </script>
+            </head>
+            <body class="raleway-uniquifier">
+        <table>
+            <tr>
+                <td class="header" colspan="2">
+                    <table>
+                        <tr>
+                            <td class="logo">
+                                <a href="/"><img class="logo_image" src="/images/logo.png" alt="logo"></a>
+                            </td>
+                            <td>
+                                <p class="name">FurEver Homes</p>
+                            </td>
+                            <td>  
+                                <div class="dateTime">
+                                    <b>Date and Time</b>
+                                    <div id="currentDate"></div>
+                                    <div id="currentTime"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
